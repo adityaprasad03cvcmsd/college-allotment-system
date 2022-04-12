@@ -1,9 +1,17 @@
 import './table.css';
-
+import cancel from "../images/cancle.png";
+import down from "../images/down.png";
+import index from "../images/index.png"
+import downward from "../images/downward.jpg";
+ 
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AddStudent } from "../redux/action";
-import { Th, Td } from "../styledComponents/tableComponents"
+import {v4 as uuid} from "uuid"
+
+import { Th, Td, Thpop } from "../styledComponents/tableComponents";
+import { Button } from '../styledComponents/Button';
+import { Input } from '../styledComponents/Input';
 // import {useNavigate} from "react-router-dom"
 export const Table = () => {
     const dispatch = useDispatch();
@@ -43,7 +51,8 @@ export const Table = () => {
             "Rank": rank,
             "College Preference 1": prefer1,
             "College Preference 2": prefer2,
-            "College Preference 3": prefer3
+            "College Preference 3": prefer3,
+            id:uuid()
         }
         console.log(temp);
         SetRows([...rows, temp]);
@@ -59,15 +68,15 @@ export const Table = () => {
                 <table>
                     <tbody>
                         <tr>
-                            <Th>Student Name</Th>
+                            <Thpop>Student Name</Thpop>
                             <th><input onInput={(e)=>{setStuName(e.target.value)}}/></th>
                         </tr>
                         <tr>
-                            <Th>Rank</Th>
+                            <Thpop>Rank</Thpop>
                             <th><input onInput={(e)=>{setRank(e.target.value)}}/></th>
                         </tr>
                         <tr>
-                            <Th>College Preference 1</Th>
+                            <Thpop>College Preference 1</Thpop>
                             <th>
                                 <select onChange={(e)=>{setprefer1(e.target.value)}}>
                                     <option value="IIT Madras">IIT Madras</option>
@@ -80,7 +89,7 @@ export const Table = () => {
                             </th>
                         </tr>
                         <tr>
-                            <Th>College Preference 2</Th>
+                            <Thpop>College Preference 2</Thpop>
                             <th>
                                 <select onChange={(e)=>{setprefer2(e.target.value)}}>
                                     <option value="IIT Madras">IIT Madras</option>
@@ -92,7 +101,7 @@ export const Table = () => {
                             </th>
                         </tr>
                         <tr>
-                            <Th>College Preference 3</Th>
+                            <Thpop>College Preference 3</Thpop>
                             <th>
                                 <select onChange={(e)=>{setprefer3(e.target.value)}}>
                                     <option value="IIT Madras">IIT Madras</option>
@@ -111,7 +120,7 @@ export const Table = () => {
                 <br></br>
                 <br></br>
                 <div className="popFlex">
-                    <button className="cancle" onClick={()=>{setFlag(false)}}>Cancle</button>
+                    <button className="cancle" onClick={()=>{setFlag(false)}}><img className="image" src={cancel} alt=""/> Cancle</button>
                     <button className="save" onClick={handleStudent}>Save</button>
                 </div>
                 
@@ -120,29 +129,30 @@ export const Table = () => {
     }
 
     return (
-        <div>
-            <h1>College Allotment System</h1>
-            <br></br>
-            <br></br>
-            <h3>Student List</h3>
+        <div className='title'>
+            <p>Student List</p>
             <table>
                 <thead>
                     <tr>
-                        {columnNames.map((el, index) => {
-                            return <Th key={index}>{el}</Th>
-                        })}
+                        <Th> <img  src={index} className="image" alt=""/>{columnNames[0]} <img  src={downward} className="image2" alt=""/></Th>
+                        <Th>#{columnNames[1]}<img  src={downward} className="image2" alt=""/></Th>
+                        <Th><img  src={down} className="image1" alt=""/>{columnNames[2]}<img  src={downward} className="image2" alt=""/></Th>
+                        <Th><img  src={down} className="image1" alt=""/>{columnNames[3]}<img  src={downward} className="image2" alt=""/></Th>
+                        <Th><img  src={down} className="image1" alt=""/>{columnNames[4]}<img  src={downward} className="image2" alt=""/></Th>
                     </tr>
                 </thead>
                 <tbody>
                     {rows.map((elRows, indexRows) => {
                         return <tr key={indexRows}>
                             {columnNames.map((el, index) => {
-                                return <Td key={index}>
-                                    <input
+                                // console.log(el)
+                                return <Td key={index} colleg={rows[indexRows][el]}>
+                                    <Input
                                         type="text"
                                         column={el}
                                         value={rows[indexRows][el]}
                                         index={indexRows}
+                                        college={ rows[indexRows][el] }
                                         onChange={(e) => updateRows(e)}
                                     />
                                 </Td>
@@ -151,10 +161,11 @@ export const Table = () => {
                     })}
                 </tbody>
             </table>
-            <button onClick={()=>{setFlag(true)}}>Add New Student</button>
-            <button onClick={goToResult}>Results</button>
+            <br></br>
+            <Button onClick={()=>{setFlag(true)}}>Add New Student</Button>
+            <Button onClick={goToResult}>Get Results</Button>
 
-            {flag?PopUp():null}
+            {flag ? PopUp() : null}
         </div>
     )
 }

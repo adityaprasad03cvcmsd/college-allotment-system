@@ -10,8 +10,12 @@ function App() {
         <Route path="" element={<Table />}></Route>
         <Route path="/result"  element={<Result/>}></Route>
       </Routes> */}
-      <Table />
-      <Result/>
+      <div className="page">
+        <br></br>
+        <h1>College Allotment System</h1>
+        <Table />
+        <Result/>
+      </div>
     </div>
   );
 }

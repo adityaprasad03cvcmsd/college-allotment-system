@@ -1,4 +1,12 @@
+import "./result.css"
+
+import down from "../images/down.png";
+import index from "../images/index.png"
+import downward from "../images/downward.jpg";
+
 import { useSelector } from "react-redux"
+import {Th, Td} from "../styledComponents/tableComponents"
+import { P } from "../styledComponents/P";
 
 export const Result = () => {
     const { studentDetails, college } = useSelector((store) => store
@@ -47,6 +55,30 @@ export const Result = () => {
 
     console.log(arr,allotment)
     return (
-        <div></div>
+        <div>
+            <br></br>
+            <h3>Results</h3>
+            <br></br>
+            <table>
+                <thead>
+                    <tr>
+                        <Th><img  src={index} className="image" alt=""/>Student Name <img  src={downward} className="image2" alt=""/></Th>
+                        <Th>#Rank<img  src={downward} className="image2" alt=""/></Th>
+                        <Th><img  src={down} className="image1" alt=""/>Alloted College<img  src={downward} className="image2" alt=""/></Th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {studentDetails.map((el => {
+                        return <tr>
+                            <Td>{el[stuName]}</Td>
+                            <Td>{el["Rank"]}</Td>
+                            <Td color={allotment[el[stuName]] }><P college={allotment[el[stuName]]}>{ allotment[el[stuName]]}</P></Td>
+                        </tr>
+                    }))}
+                </tbody>
+            </table>
+            <br></br>
+            <br></br>
+        </div>
     )
 }

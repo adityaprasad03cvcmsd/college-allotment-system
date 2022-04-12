@@ -1,0 +1,22 @@
+table {
+    text-align: center;
+    margin: auto;
+    border-collapse: collapse;
+}
+td{
+    padding: 10px;
+}
+
+.image{
+    height: 20px;
+    margin-right: 5px;
+}
+.image2{
+    height:6px;
+    margin-left:3px;
+}
+
+.image1{
+    height: 10px;
+    margin-right: 5px;
+}

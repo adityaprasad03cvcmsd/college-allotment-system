@@ -1,10 +1,16 @@
 #popup{
     position: fixed;
-    top:100px;
-    left:100px;
+    /* top:100px;
+    left:100px; */
     background-color: white;
-    width: 30%;
+    width: 40%;
     border: 1px solid lightseagreen;
+    top: 50%;
+    left:30%;
+    transform: translate(0, -50%);
+}
+#popup table th{
+    width: 100%;
 }
 .popupTitleBar{
     background-color: #193F83;
@@ -22,16 +28,54 @@
 }
 .cancle{
     background-color: #E6EFFB;
-    padding: 3%;
-    width: 40%;
+    padding: 4%;
+    width: 32%;
+    border-radius: 5px;
+    border: 1px solid lightblue;
 }
 .save{
     background-color: greenyellow;
-    padding: 3%;
-    width: 40%;
+    padding: 4%;
+    width: 32%;
+    border-radius: 5px;
+    border: 1px solid lightblue;
 }
 .popFlex{
     display: flex;
     gap:5%;
     margin: auto;
+    padding: 3%;
+    justify-content: space-between;
+}
+
+table tr th , table tr td{
+    margin:auto;
+    text-align: center;
+    width: 60%;
+    padding: 10px;
+    border-collapse: collapse important!;
+}
+
+table tr td input{
+    border: transparent;
+    text-align: center;
+}
+.title{
+    text-align: left;
+    margin: auto;
+    padding: 10%;
+}
+
+.image{
+    height: 20px;
+    margin-right: 5px;
+}
+.image2{
+    height:6px;
+    margin-left:3px;
+}
+
+.image1{
+    height: 10px;
+    margin-right: 5px;
 }
