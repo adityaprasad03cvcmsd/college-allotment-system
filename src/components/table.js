@@ -45,6 +45,7 @@ export const Table = () => {
                         <th>Student Name</th>
                         <th><input onchange={(e)=>{}}/></th>
                     </tr>
+                    <tr></tr>
                 </table>
             </div>
         )
