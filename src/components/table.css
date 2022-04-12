@@ -1,0 +1,37 @@
+#popup{
+    position: fixed;
+    top:100px;
+    left:100px;
+    background-color: white;
+    width: 30%;
+    border: 1px solid lightseagreen;
+}
+.popupTitleBar{
+    background-color: #193F83;
+    color:white;
+    text-align: left;
+    height:20px;
+    padding: 10px;
+    margin-top: 0%;
+}
+#popup th{
+    width: 50%;
+}
+#popup select{
+    width: 100%;
+}
+.cancle{
+    background-color: #E6EFFB;
+    padding: 3%;
+    width: 40%;
+}
+.save{
+    background-color: greenyellow;
+    padding: 3%;
+    width: 40%;
+}
+.popFlex{
+    display: flex;
+    gap:5%;
+    margin: auto;
+}

@@ -3,7 +3,7 @@
 import styled from "styled-components"
 
 export const Th = styled.th`
-background-color: dark-blue;
+background-color: #E6EFFB;
 text-align: center;
 border: 1px blue solid;
 margin:0;
@@ -12,7 +12,6 @@ font-size: 13px
 `
 
 export const Td = styled.td`
-background-color: #E6EFFB;
 text-align: center;
 border: 1px blue solid;
 margin:0;
