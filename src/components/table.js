@@ -82,7 +82,7 @@ export const Table = () => {
                                     <option value="IIT Madras">IIT Madras</option>
                                     <option value="IIT Kanpur">IIT Kanpur</option>
                                     <option value="IIT Bombay">IIT Kanpur</option>
-                                    <option value="IIT Hyderabad">IIIT Hyderabad</option>
+                                    <option value="IIIT Hyderabad">IIIT Hyderabad</option>
                                     <option value="IIT Roorkee">IIT Roorkee</option>
                                     <option value="IIM Ahmedabad">IIM Ahmedabad</option>
                                 </select>
@@ -94,7 +94,7 @@ export const Table = () => {
                                 <select onChange={(e)=>{setprefer2(e.target.value)}}>
                                     <option value="IIT Madras">IIT Madras</option>
                                     <option value="IIT Kanpur">IIT Kanpur</option>
-                                    <option value="IIT Hyderabad">IIIT Hyderabad</option>
+                                    <option value="IIIT Hyderabad">IIIT Hyderabad</option>
                                     <option value="IIT Roorkee">IIT Roorkee</option>
                                     <option value="IIM Ahmedabad">IIM Ahmedabad</option>
                                 </select>
@@ -106,7 +106,7 @@ export const Table = () => {
                                 <select onChange={(e)=>{setprefer3(e.target.value)}}>
                                     <option value="IIT Madras">IIT Madras</option>
                                     <option value="IIT Kanpur">IIT Kanpur</option>
-                                    <option value="IIT Hyderabad">IIIT Hyderabad</option>
+                                    <option value="IIIT Hyderabad">IIIT Hyderabad</option>
                                     <option value="IIT Roorkee">IIT Roorkee</option>
                                     <option value="IIM Ahmedabad">IIM Ahmedabad</option>
                                 </select>
